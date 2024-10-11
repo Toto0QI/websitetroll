@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lypso | By kawaz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.js">
+    <style>
+        .portrait-video-container {
+            text-align: center;
+            margin-top: 0px; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            padding: 10px; 
+        }
+
+        .portrait-video {
+            width: 100%; 
+            height: auto; 
+            max-height: 90vh; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(56, 56, 56, 0); 
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .portrait-video:hover {
+            box-shadow: 0 0 30px rgb(0, 11, 73);
+        }
+
+
+        .volume-control {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h2><a href="https://tiktok.com/@dev.kawaz" target="_blank" rel="noopener noreferrer">Kawaz</a></h2>
+    <div class="mid-spot" onclick="document.body.classList.toggle('gold');"></div>
+    <button class="contact-btn" onclick="window.location.href='https://dsc.gg/LypsoFN'">
+        <span class="glow"></span>
+        <span class="contact-btn-content">Contact Us</span>
+    </button>
+  
+    <div class="spotlight">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+</div>
+
+<canvas id="particleCanvas"></canvas>
+
+<div class="accent-lines">
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+</div>
+<div class="heroSubP">
+    <p>Welcome !</p>
+</div>
+<div class="hero">
+    <div class="heroT">
+      <h2>Lypso</h2>
+      <h2>Lypso</h2>
+    </div>
+</div>
+<p class="heroP">The OG experience, <br>
+    powered by Kawaz <br>
+    co-owner : Lexiz / QXRTY
+</p>
+<div class="mountains">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div class="hero-spacer"></div>
+
+<div class="content-section">
+    <div class="content-acc">
+      <div></div>
+      <div></div>
+    </div>
+    <p class="subt">Lypso Project</p>
+    <h3 class="title">Enjoy season .<br>
+      Download here</h3>
+    <p class="subp">Here's the best experience, <br>Saison 6 Chapitre 1</p>
+    <h1> </h1>
+    <a href="https://github.com/UniqueKedaTools/LypsoLauncher/raw/refs/heads/main/LypsoLauncheur.zip" class="button" href="#"><span></span>LAUNCHER</a>
+    <h2>‎ </h2>
+    <h2>‎ </h2>
+    <a href="https://public.simplyblk.xyz/6.21.rar" class="button" href="#"><span></span>SEASON</a>
+
+    <div class="video-container">
+      <video id="trailerVideo" autoplay loop>
+          <source src="lypso-trailer.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <h1> </h1>
+
+    <h2>TRAILER</h2>
+    <div class="portrait-video-container">
+        <video id="portraitVideo" class="portrait-video" loop>
+            <source src="LYPSOTRAILER.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h6>Website made by kawaz | Copyright Lypso</h6>
+        <div class="volume-control">
+            <label for="volumeSlider">Volume:</label>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50">
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("click", function() {
+    var video = document.getElementById("trailerVideo");
+    var portraitVideo = document.getElementById("portraitVideo");
+    
+    if (video.paused) {
+        video.muted = false; 
+        video.volume = 0.5; 
+        video.play(); 
+    }
+    
+    if (portraitVideo.paused) {
+        portraitVideo.muted = false; 
+        portraitVideo.volume = 0.5;  
+        portraitVideo.play(); 
+    }
+});
+
+
+const volumeSlider = document.getElementById("volumeSlider");
+const portraitVideo = document.getElementById("portraitVideo");
+const trailerVideo = document.getElementById("trailerVideo");
+
+volumeSlider.addEventListener("input", function() {
+    const volumeValue = volumeSlider.value / 100; 
+    portraitVideo.volume = volumeValue; 
+    trailerVideo.volume = volumeValue; 
+});
+</script>
+
+</body>
+</html>
